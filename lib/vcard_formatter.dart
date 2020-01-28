@@ -418,6 +418,12 @@ class VCardFormatter {
       formattedVCardString += 'X-ABShowAs:COMPANY' + nl();
     }
 
+    if (vCard.customFields != null) {
+      vCard.customFields.forEach((label, value) {
+        formattedVCardString += 'X-' + label.trim().replaceAll(' ', '-') + ':' + e(value) + nl();
+      });
+    }
+
     formattedVCardString += 'END:VCARD' + nl();
     return formattedVCardString;
   }
