@@ -115,6 +115,9 @@ class VCard {
   /// Whether or not this vCard object represents an organization
   bool isOrganization = false;
 
+  /// Categories
+  Set<String> categories;
+
   /// Map of field name, field of custom values.  This will be saved in the vcard as "X-CUSTOM-FIELD-NAME" 
   Map<String, String> customFields;
 
